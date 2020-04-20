@@ -1,9 +1,9 @@
 ---
 layout: layouts/home.njk
-title: Accueil
+title: Home
 date: 2017-01-01
 permalink: /
 eleventyNavigation:
-  key: Accueil
+  key: Home
   order: 0
 ---
