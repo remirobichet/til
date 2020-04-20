@@ -10,11 +10,7 @@ module.exports = function(eleventyConfig) {
   // Eleventy Navigation https://www.11ty.dev/docs/plugins/navigation/
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
-  // Configuration API: use eleventyConfig.addLayoutAlias(from, to) to add
-  // layout aliases! Say you have a bunch of existing content using
-  // layout: post. If you don’t want to rewrite all of those values, just map
-  // post to a new file like this:
-  // eleventyConfig.addLayoutAlias("post", "layouts/my_new_post_layout.njk");
+  eleventyConfig.addLayoutAlias("post", "layouts/post.njk");	
 
   // Merge data instead of overriding
   // https://www.11ty.dev/docs/data-deep-merge/
@@ -48,6 +44,13 @@ module.exports = function(eleventyConfig) {
   // Unique array
   eleventyConfig.addFilter("unique", function(arr) {
     return arr instanceof Array && arr.filter((e, i, arr) => arr.indexOf(e) == i) || arr;
+  });
+
+  // only content in the `posts/` directory	
+  eleventyConfig.addCollection("posts", function(collection) {	
+    return collection.getAllSorted().filter(function(item) {	
+      return item.inputPath.match(/^\.\/posts\//) !== null;	
+    });	
   });
 
   // Minify HTML output
