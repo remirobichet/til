@@ -45,6 +45,11 @@ module.exports = function(eleventyConfig) {
     return minified.code;
   });
 
+  // Unique array
+  eleventyConfig.addFilter("unique", function(arr) {
+    return arr instanceof Array && arr.filter((e, i, arr) => arr.indexOf(e) == i) || arr;
+  });
+
   // Minify HTML output
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
     if (outputPath.indexOf(".html") > -1) {
