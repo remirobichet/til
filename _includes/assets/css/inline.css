@@ -113,6 +113,20 @@ section[data-layout="postlist"] {
 	grid-row-gap: 20px;
 }
 
+section[data-layout="postlist"] article {
+	display: flex;
+	flex-flow: row-reverse nowrap;
+	align-items: center;
+}
+
+section[data-layout="postlist"] article > * {
+	flex-basis: 50%;
+}
+
+section[data-layout="postlist"] article > img {
+	margin: auto 20px;
+}
+
 /* Posts List */
 article {
 	margin-bottom: 1em;
