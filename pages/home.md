@@ -4,6 +4,6 @@ title: Accueil
 date: 2017-01-01
 permalink: /
 eleventyNavigation:
-  key: Home
+  key: Accueil
   order: 0
 ---
