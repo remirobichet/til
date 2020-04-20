@@ -11,6 +11,12 @@ section: post
     </small>
   </p>
 
+  {% if summary %}
+    <p>
+      {{ summary }}
+    </p>
+  {% endif %}
+
   {{ layoutContent | safe }}
 
   {% if tags %}
@@ -26,6 +32,4 @@ section: post
 
 </article>
 
-<nav>
-  <a href="{{ '/blog/' | url }}">← Blog index</a>
-</nav>
+{% include "components/back-to-home.njk" %}

@@ -1,0 +1,16 @@
+<section class="tag-list">
+	{% set tagList = [] %}
+	{% for post in postslist %}
+		{% if post.data.tags %}
+			{% for tag in post.data.tags %}
+				{%- if tag != "post" -%}
+                    {% set tagList = (tagList.push(tag), tagList) %}
+				{%- endif -%}
+			{% endfor %}
+		{% endif %}
+	{% endfor %}
+    {% for tag in tagList | unique %}
+        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+        <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
+    {% endfor %}
+</section>

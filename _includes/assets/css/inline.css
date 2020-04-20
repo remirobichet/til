@@ -1,7 +1,8 @@
 :root {
-	--primary: blue;
-	--secondary: white;
-	--background: #FFF0EB;
+	--background: #303030;
+	--color: white;
+	--white: white;
+	--main-color: #7CFD98;
 }
 
 *, *:before, *:after {
@@ -12,7 +13,7 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-	font-family: "Avenir", "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -20,10 +21,7 @@ body {
 	height: 100vh;
 	grid-template-rows: auto 1fr auto;
 	background-color: var(--background);
-}
-
-main {
-	max-width: 37.5em;
+	color: var(--color);
 }
 
 p,
@@ -34,7 +32,7 @@ code {
 
 a[href],
 a[href]:visited {
-	color: var(--primary);
+	color: var(--main-color);
 }
 
 a[href]:not(:hover) {
@@ -94,12 +92,7 @@ header nav ul :first-child {
 
 header nav li {
 	display: inline-block;
-	margin: 0 .25em;
-}
-
-header nav li a {
-	padding: .25em .5em;
-	border-radius: .25em;
+	margin: 0 .5em;
 }
 
 header nav li a[href]:not(:hover) {
@@ -107,7 +100,17 @@ header nav li a[href]:not(:hover) {
 }
 
 header nav li a[data-current="current item"] {
-	background-color: white;
+	font-weight: 700;
+	text-decoration: underline;
+}
+
+/* Section 'postlist' */
+
+section[data-layout="postlist"] {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-column-gap: 20px;
+	grid-row-gap: 20px;
 }
 
 /* Posts List */
@@ -115,7 +118,7 @@ article {
 	margin-bottom: 1em;
 	padding-bottom: 1em;
 	border-bottom: 1px solid #eee;
-	border-bottom: 1px solid var(--secondary);
+	border-bottom: 1px solid var(--white);
 }
 
 main > section > article > * {
@@ -134,22 +137,27 @@ a[rel="tag"]:visited {
   padding: 0 .5em;
 	line-height: 2em;
 	height: 2em;
-  border: 1px solid var(--secondary);
-	background-color: var(--secondary);
-	color: var(--primary);
+	background-color: var(--main-color);
+	color: var(--background);
   border-radius: .25em;
   text-decoration: none;
 	margin: 0 .5em .5em 0;
 }
 
 a[rel="tag"]:hover {
-	border: 1px solid var(--primary);
-	background-color: var(--primary);
-	color: var(--secondary);
+	text-decoration: underline;
 }
 
 a[rel="tag"]:last-child {
 	margin-right: 0;
+}
+
+/* Tag List */
+
+section.tag-list  a[rel="tag"] {
+	padding: 2em;
+	height: 6em;
+	letter-spacing: 0.4em;
 }
 
 /* Contact Form */
@@ -169,7 +177,7 @@ button {
   padding: 1em;
   margin-bottom: 1em;
 	font-size: 1rem;
-	font-family: "Avenir", "Avenir Next", sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 input,
@@ -178,14 +186,18 @@ textarea {
 }
 
 button {
-	border: 1px solid var(--primary);
-	background-color: var(--primary);
-	color: var(--secondary);
+	border: 1px solid var(--main-color);
+	background-color: var(--main-color);
+	color: var(--white);
 	cursor: pointer;
 }
 
 @media screen and (min-width:768px) {
 	:root {
 		font-size: 1.1rem;
+	}
+
+	section[data-layout="postlist"] {
+		grid-template-columns: 1fr 1fr;
 	}
 }
