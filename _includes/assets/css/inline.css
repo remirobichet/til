@@ -120,11 +120,12 @@ section[data-layout="postlist"] article {
 }
 
 section[data-layout="postlist"] article > * {
-	flex-basis: 50%;
+	width: 0;
+    flex: 0 0 50%;
 }
 
 section[data-layout="postlist"] article > img {
-	margin: auto 20px;
+	padding: 0 20px;
 }
 
 /* Posts List */
