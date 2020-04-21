@@ -6,9 +6,9 @@
 
 ## Carbon images
 
-Go to [Carbon](https://carbon.now.sh/)
-Import [carbon config file](./_includes/assets/carbon-config.json) to carbon
-Generate picture
+- Go to [Carbon](https://carbon.now.sh/)
+- Import [carbon config file](./_includes/assets/carbon-config.json) to carbon
+- Generate picture
 
 ---
 ---
