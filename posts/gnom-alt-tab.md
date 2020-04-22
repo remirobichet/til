@@ -4,7 +4,7 @@ date: 2020-04-22T12:47:00.406Z
 thumbnail: /static/img/gnome-alt-tab.png
 summary: Prevent Gnome shell Alt-Tab from grouping windows from similar apps.
 tags:
-  - post
+  - linux
 ---
 Ressources: 
 
